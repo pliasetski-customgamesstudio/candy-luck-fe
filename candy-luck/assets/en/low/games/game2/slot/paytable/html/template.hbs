@@ -1,0 +1,147 @@
+<div id='paytable' class='paytable-wrapper'>
+  <div class='paytable-overlay'></div>
+
+  <div class='paytable'>
+    <div class='paytable-header'>
+      <div class='paytable-actions left'>
+        <div class='paytable-icon' id='close-paytable' title='{{content.close}}'>
+          <svg
+            viewBox='0 0 24 24'
+            width='24'
+            height='24'
+            fill='none'
+            stroke='#a02c7e'
+            stroke-width='5.0'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path d='M18 4L10 12L18 20' />
+          </svg>
+        </div>
+      </div>
+
+      <div class='paytable-title'>
+        Paytable
+      </div>
+
+      <div class='paytable-actions right'>
+        <div class='paytable-icon circle' id='volume-mute' title='{{content.mute}}'>
+          <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><g
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+              clip-path='url(#a)'
+            ><path
+                d='M8.867 3.755C10.753 1.85 14 3.185 14 5.865v11.772c0 2.567-3.013 3.948-4.958 2.273l-3.111-2.68H4a4 4 0 0 1-4-4v-2.46a4 4 0 0 1 4-4h1.885l2.982-3.015ZM12 5.865c0-.894-1.082-1.339-1.71-.703l-3.277 3.31a1 1 0 0 1-.71.297H4a2 2 0 0 0-2 2v2.462a2 2 0 0 0 2 2h1.931a2 2 0 0 1 1.305.484l3.111 2.68A1 1 0 0 0 12 17.637V5.865ZM15.056 7.67a1 1 0 0 1 1.273-.614C18.014 7.643 19 9.55 19 11.5c0 1.949-.986 3.857-2.67 4.444a1 1 0 1 1-.66-1.888C16.287 13.84 17 12.919 17 11.5s-.714-2.341-1.33-2.556a1 1 0 0 1-.614-1.273Z'
+              /><path
+                d='M16.01 4.858a1 1 0 0 1 1.131-.848C20.546 4.497 23 7.761 23 11.5c0 3.739-2.455 7.003-5.858 7.49a1 1 0 1 1-.284-1.98C19.093 16.69 21 14.442 21 11.5c0-2.942-1.908-5.19-4.142-5.51a1 1 0 0 1-.848-1.132Z'
+              /></g><defs><clipPath id='a'><path
+                  fill='#fff'
+                  d='M0 0h24v24H0z'
+                /></clipPath></defs></svg>
+        </div>
+
+        <div class='paytable-icon circle' id='volume-unmute' title='{{content.unmute}}'>
+          <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><g
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+            ><path
+                d='M12 5.828c0-.89-1.077-1.337-1.707-.707L7.707 7.707a1 1 0 0 1-1.414-1.414l2.586-2.586C10.769 1.817 14 3.156 14 5.828V12.5a1 1 0 1 1-2 0V5.828ZM4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1.63a2 2 0 0 1 1.302.482l3.417 2.929A1 1 0 0 0 12 17.65V17.5a1 1 0 1 1 2 0v.152c0 2.563-3.006 3.945-4.952 2.277L5.63 17H4a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4h.5a1 1 0 0 1 0 2H4Z'
+              /><path
+                d='M1.293 1.293a1 1 0 0 1 1.414 0l20 20a1 1 0 0 1-1.414 1.414l-20-20a1 1 0 0 1 0-1.414Z'
+              /><path
+                d='M15.056 7.67a1 1 0 0 1 1.273-.614C18.014 7.643 19 9.55 19 11.5c0 1.949-.986 3.857-2.67 4.444a1 1 0 1 1-.66-1.888C16.287 13.84 17 12.919 17 11.5s-.714-2.341-1.33-2.556a1 1 0 0 1-.614-1.273Z'
+              /><path
+                d='M16.51 4.358a1 1 0 0 1 1.131-.848c1.785.255 3.14 1.409 4.023 2.872C22.543 7.842 23 9.674 23 11.5c0 3.295-1.893 6.195-4.661 7.192a1 1 0 0 1-.678-1.882C19.53 16.137 21 14.07 21 11.5c0-1.515-.384-2.98-1.05-4.085-.663-1.101-1.557-1.777-2.591-1.925a1 1 0 0 1-.849-1.132Z'
+              /></g></svg>
+        </div>
+
+        <div class='paytable-icon circle' id='enter-fullscreen' title='{{content.enterFullscreen}}'>
+          <svg xmlns='http://www.w3.org/2000/svg' viewBox='2 2 20 20'><g
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+            ><path
+                d='M5 4a1 1 0 0 0-1 1v4a1 1 0 0 1-2 0V5a3 3 0 0 1 3-3h4a1 1 0 0 1 0 2H5ZM4 19a1 1 0 0 0 1 1h4a1 1 0 1 1 0 2H5a3 3 0 0 1-3-3v-4a1 1 0 1 1 2 0v4ZM19 4a1 1 0 0 1 1 1v4a1 1 0 1 0 2 0V5a3 3 0 0 0-3-3h-4a1 1 0 1 0 0 2h4ZM20 19a1 1 0 0 1-1 1h-4a1 1 0 1 0 0 2h4a3 3 0 0 0 3-3v-4a1 1 0 1 0-2 0v4Z'
+              /></g></svg>
+        </div>
+
+        <div class='paytable-icon circle' id='exit-fullscreen' title='{{content.exitFullscreen}}'>
+          <svg xmlns='http://www.w3.org/2000/svg' viewBox='2 2 20 20'><path
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+              d='M8 2a1 1 0 0 1 1 1v3a3 3 0 0 1-3 3H3a1 1 0 0 1 0-2h3a1 1 0 0 0 1-1V3a1 1 0 0 1 1-1Zm8 0a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h3a1 1 0 1 1 0 2h-3a3 3 0 0 1-3-3V3a1 1 0 0 1 1-1ZM2 16a1 1 0 0 1 1-1h3a3 3 0 0 1 3 3v3a1 1 0 1 1-2 0v-3a1 1 0 0 0-1-1H3a1 1 0 0 1-1-1Zm16 1a1 1 0 0 0-1 1v3a1 1 0 1 1-2 0v-3a3 3 0 0 1 3-3h3a1 1 0 1 1 0 2h-3Z'
+            /></svg>
+        </div>
+
+        <div class='paytable-icon circle' id='tutorial' title='{{content.tutorial}}'>
+          <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 91.06 122.88'>
+            <g>
+              <path
+                d='M58.68,84.96H27.37v-3.12c0-5.32,0.59-9.65,1.8-12.97c1.21-3.35,3.01-6.36,5.4-9.11c2.39-2.76,7.76-7.6,16.12-14.52 c4.45-3.63,6.67-6.95,6.67-9.96c0-3.04-0.9-5.37-2.67-7.06c-1.8-1.66-4.5-2.5-8.13-2.5c-3.91,0-7.12,1.29-9.68,3.88 c-2.56,2.56-4.19,7.09-4.9,13.5L0,39.13c1.1-11.76,5.37-21.21,12.8-28.39C20.25,3.57,31.68,0,47.06,0c11.98,0,21.63,2.5,29,7.48 c9.99,6.78,15,15.78,15,27.04c0,4.67-1.29,9.2-3.88,13.53c-2.56,4.33-7.85,9.65-15.81,15.89c-5.54,4.42-9.06,7.93-10.52,10.61 C59.42,77.19,58.68,80.68,58.68,84.96L58.68,84.96z M26.28,93.29h33.56v29.6H26.28V93.29L26.28,93.29z'
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class='paytable-content'>
+      {{#each tabs as |tab|}}
+        {{#each tab.sections as |section|}}
+          <div class='paytable-section'>
+            {{#each section.items as |item|}}
+              <div class='paytable-item'>
+                {{#if item.image}}
+                  <div class='item-left'>
+                    <div class='item-image-wrapper'>
+                      <img class='item-image' src='{{item.image}}' alt='{{item.title}}' />
+                    </div>
+
+                    {{#if item.leftPayouts}}
+                      <ul class='item-payouts-list'>
+                        {{#each item.leftPayouts as |leftPayout|}}
+                          <li class='item-payout'>
+                            <span class='item-payout-count'>{{leftPayout.label}}</span>
+                            {{leftPayout.value}}
+                          </li>
+                        {{/each}}
+                      </ul>
+                    {{/if}}
+                  </div>
+                {{/if}}
+                <div class='item-content'>
+                  {{#if item.title}}
+                    <div class='item-title'>{{item.title}}</div>
+                  {{/if}}
+
+                  {{#if item.descriptions}}
+                    <ul class='item-description-list'>
+                      {{#each item.descriptions as |description|}}
+                        <li class='item-description'>{{description}}</li>
+                      {{/each}}
+                    </ul>
+                  {{/if}}
+
+                  {{#if item.payouts}}
+                    <ul class='item-payouts-list'>
+                      {{#each item.payouts as |payout|}}
+                        <li class='item-payout'>
+                          <span class='item-payout-count'>{{payout.label}}</span>
+                          {{payout.value}}
+                        </li>
+                      {{/each}}
+                    </ul>
+                  {{/if}}
+
+                  {{#if item.showLines}}
+                    <div class='paylines-block'></div>
+                  {{/if}}
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        {{/each}}
+      {{/each}}
+    </div>
+  </div>
+</div>

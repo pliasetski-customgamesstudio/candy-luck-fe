@@ -1,0 +1,248 @@
+{
+  "tabs": [
+    {
+      "id": "special-symbols",
+      "sections": [
+        {
+          "type": "symbol-block",
+          "title": "SCATTER",
+          "symbol": "SCATTER",
+          "rules": [
+            "Appears only on reels 2, 3, 4.",
+            "3 or more SCATTER symbols trigger 5 Free Games and Golden Mine Game.",
+            "Win more Free Games or other features in the Match 3 Golden Mine Game:",
+            "+ 2 Extra Free Games",
+            "+ 3 Extra Free Games",
+            "+ 5 Extra Free Games",
+            "Free games win multiplier - will multiply all wins during Free Games except cumulative part of Jackpot wins.",
+            "Easy retrigger - just 2 SCATTER symbols will retrigger the Free Games.",
+            "Random extra free games can be won during each pick.",
+            "5th and 10th Golden Mine Game trigger Super Free Games with guaranteed win multiplier.",
+            "20th Golden Mine Game trigger Grand Free Games with guaranteed win multiplier and easy retrigger."
+          ],
+          "payouts": {
+            "x3": "1 - Total Bet"
+          }
+        },
+        {
+          "type": "symbol-block",
+          "title": "MINE CART",
+          "symbol": "MINE_CART",
+          "rules": [
+            "MINE CART and MINE CART WILD symbols are present on all reels.",
+            "3 or more MINE CART and/or MINE CART WILD symbols trigger Quick Cash feature."
+          ]
+        },
+        {
+          "type": "symbol-block",
+          "title": "WILD and MINE CART WILD",
+          "symbol": "WILD_AND_MINE_CART_WILD",
+          "rules": ["Replaces all symbols except SCATTER, MINE CART and MINE CART WILD symbols."]
+        }
+      ]
+    },
+    {
+      "id": "game-rules",
+      "sections": [
+        {
+          "id": "lines",
+          "type": "feature-block",
+          "feature": "30 LINES",
+          "rules": [
+            "Gold Mine is a 30 paylines slot.",
+            "All symbols pay from left to right starting with the leftmost reel.",
+            "Only highest win paid per line.",
+            "All paylines wins are multiplied by the bet per line."
+          ]
+        },
+        {
+          "type": "feature-block",
+          "feature": "FREE GAMES",
+          "rules": [
+            "Free Games start after the Golden Mine Game.",
+            "Landing 3 SCATTER symbols during the Free Games awards 5 additional Free Games.",
+            "Free Games can have a multiplier, which will multiply all wins during Free Games except Quick Cash wins.",
+            "Free Games can have an Easy retrigger feature: Landing 2 SCATTER symbols during the Free Games awards 3 additional Free Games."
+          ]
+        },
+        {
+          "type": "feature-block",
+          "feature": "SUPER FREE GAMES",
+          "rules": [
+            "Free Games start after the 5th and 10th Golden Mine Game.",
+            "Landing 3 SCATTER symbols during the Free Games awards 5 additional Free Games.",
+            "Free Games have a multiplier, which will multiply all wins during Free Games except Quick Cash wins."
+          ]
+        },
+        {
+          "type": "feature-block",
+          "feature": "GRAND FREE GAMES",
+          "rules": [
+            "Free Games start after the 20th Golden Mine Game.",
+            "Landing 3 SCATTER symbols during the Free Games awards 5 additional Free Games.",
+            "Free Games have a multiplier, which will multiply all wins during Free Games except Quick Cash wins.",
+            "Free Games have a guaranteed Easy retrigger feature: Landing 2 SCATTER symbols during the Free Games awards 3 additional Free Games."
+          ]
+        }
+      ]
+    }
+  ],
+  "content": {
+    "close": "Close",
+    "enterFullscreen": "Enter Fullscreen",
+    "exitFullscreen": "Exit Fullscreen",
+    "mute": "Mute",
+    "unmute": "Unmute"
+  },
+  "symbolsSections": [
+    {
+      "type": "symbol-with-rules",
+      "title": "SCATTER",
+      "symbolId": 1,
+      "symbolIcon": "scatter.png",
+      "rules": [
+        "Appears only on reels 2, 3, 4.",
+        "3 or more SCATTER symbols trigger 5 Free Games and Candy Luck Game.",
+        "Win more Free Games or other features in the Match 3 Candy Luck Game:",
+        "+ 2 Extra Free Games",
+        "+ 3 Extra Free Games",
+        "+ 5 Extra Free Games",
+        "Free games win multiplier - will multiply all wins during Free Games except cumulative part of Jackpot wins.",
+        "Easy retrigger - just 2 SCATTER symbols will retrigger the Free Games.",
+        "Random extra free games can be won during each pick.",
+        "5th and 10th Candy Luck Game trigger Super Free Games with guaranteed win multiplier.",
+        "20th Candy Luck Game trigger Grand Free Games with guaranteed win multiplier and easy retrigger."
+      ],
+      "payouts": {
+        "x3": "1 - Total Bet"
+      }
+    },
+    {
+      "type": "symbol-with-rules",
+      "title": "CUPCAKE",
+      "symbolId": 15,
+      "symbolIcon": "cupcake.png",
+      "rules": [
+        "CUPCAKE and CUPCAKE WILD symbols are present on all reels.",
+        "3 or more CUPCAKE and/or CUPCAKE WILD symbols trigger Quick Cash feature."
+      ]
+    },
+    {
+      "type": "symbol-with-rules",
+      "title": "WILD and CUPCAKE WILD",
+      "symbolId": 2,
+      "symbolIcon": "wild.png",
+      "rules": ["Replaces all symbols except SCATTER, CUPCAKE and CUPCAKE WILD symbols."]
+    },
+    {
+      "type": "multiple-symbols",
+      "title": "Super Symbol",
+      "symbols": [{ "id": 3, "icon": "simple-3.png" }]
+    },
+    {
+      "type": "multiple-symbols",
+      "title": "Sevens",
+      "symbols": [
+        { "id": 4, "icon": "simple-4.png" },
+        { "id": 5, "icon": "simple-5.png" },
+        { "id": 6, "icon": "simple-6.png" },
+        { "id": 16, "icon": "simple-16.png" }
+      ]
+    },
+    {
+      "type": "multiple-symbols",
+      "title": "Major symbols",
+      "symbols": [
+        { "id": 7, "icon": "simple-7.png" },
+        { "id": 8, "icon": "simple-8.png" },
+        { "id": 9, "icon": "simple-9.png" },
+        { "id": 10, "icon": "simple-10.png" }
+      ]
+    },
+    {
+      "type": "multiple-symbols",
+      "title": "Bar symbols",
+      "symbols": [
+        { "id": 11, "icon": "simple-11.png" },
+        { "id": 12, "icon": "simple-12.png" },
+        { "id": 13, "icon": "simple-13.png" },
+        { "id": 17, "icon": "simple-17.png" }
+      ]
+    }
+  ],
+  "gameRules": [
+    {
+      "id": "lines",
+      "type": "feature-block",
+      "feature": "30 LINES",
+      "rules": [
+        "Candy Luck is a 30 paylines slot.",
+        "All symbols pay from left to right starting with the leftmost reel.",
+        "Only highest win paid per line.",
+        "All paylines wins are multiplied by the bet per line."
+      ]
+    },
+    {
+      "type": "feature-block",
+      "feature": "FREE GAMES",
+      "rules": [
+        "Free Games start after the Candy Luck Game.",
+        "Landing 3 SCATTER symbols during the Free Games awards 5 additional Free Games.",
+        "Free Games can have a multiplier, which will multiply all wins during Free Games except Quick Cash wins.",
+        "Free Games can have an Easy retrigger feature: Landing 2 SCATTER symbols during the Free Games awards 3 additional Free Games."
+      ]
+    },
+    {
+      "type": "feature-block",
+      "feature": "SUPER FREE GAMES",
+      "rules": [
+        "Free Games start after the 5th and 10th Candy Luck Game.",
+        "Landing 3 SCATTER symbols during the Free Games awards 5 additional Free Games.",
+        "Free Games have a multiplier, which will multiply all wins during Free Games except Quick Cash wins."
+      ]
+    },
+    {
+      "type": "feature-block",
+      "feature": "GRAND FREE GAMES",
+      "rules": [
+        "Free Games start after the 20th Candy Luck Game.",
+        "Landing 3 SCATTER symbols during the Free Games awards 5 additional Free Games.",
+        "Free Games have a multiplier, which will multiply all wins during Free Games except Quick Cash wins.",
+        "Free Games have a guaranteed Easy retrigger feature: Landing 2 SCATTER symbols during the Free Games awards 3 additional Free Games."
+      ]
+    }
+  ],
+
+  "paylines": [
+    [5, 6, 7, 8, 9],
+    [0, 1, 2, 3, 4],
+    [10, 11, 12, 13, 14],
+    [0, 6, 12, 8, 4],
+    [10, 6, 2, 8, 14],
+    [5, 1, 2, 3, 9],
+    [5, 11, 12, 13, 9],
+    [0, 1, 7, 13, 14],
+    [10, 11, 7, 3, 4],
+    [5, 1, 7, 13, 9],
+    [5, 11, 7, 3, 9],
+    [0, 6, 7, 8, 4],
+    [10, 6, 7, 8, 14],
+    [0, 6, 2, 8, 4],
+    [10, 6, 12, 8, 14],
+    [5, 6, 2, 8, 9],
+    [5, 6, 12, 8, 9],
+    [0, 1, 12, 3, 4],
+    [10, 11, 2, 13, 14],
+    [0, 11, 12, 13, 4],
+    [10, 1, 2, 3, 14],
+    [5, 1, 12, 3, 9],
+    [5, 11, 2, 13, 9],
+    [0, 11, 2, 13, 4],
+    [10, 1, 12, 3, 14],
+    [0, 11, 7, 3, 14],
+    [10, 1, 7, 13, 4],
+    [5, 1, 12, 8, 14],
+    [0, 11, 7, 13, 4],
+    [10, 6, 2, 3, 9]
+  ]
+}

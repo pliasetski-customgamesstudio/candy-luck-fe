@@ -1,0 +1,32 @@
+import { ISpinResponse } from '@cgs/common';
+import { FreeSpinsInfoConstants } from '../free_spins_info_constants';
+import { ResponseHolder } from '../response_holder';
+import { BaseGameState } from '../states/base_game_state';
+import { ResumeRule } from './infra/resume_rule';
+
+export class BonusToFreeSpinsWithTypes<
+  TResponse extends ISpinResponse,
+> extends ResumeRule<TResponse> {
+  private _types: string[];
+
+  constructor(
+    sourceState: BaseGameState<TResponse>,
+    responseHolder: ResponseHolder<TResponse>,
+    types: string[]
+  ) {
+    super(sourceState, responseHolder);
+    this._types = types;
+  }
+
+  ruleCondition(resp: ResponseHolder<TResponse>): boolean {
+    return (
+      !resp.curResponse.isScatter &&
+      !!resp.curResponse.freeSpinsInfo &&
+      (this._types.some((x) => resp.curResponse.freeSpinsInfo?.currentFreeSpinsGroup?.name === x) ||
+        resp.curResponse.freeSpinsInfo.currentFreeSpinsGroup?.name ===
+          FreeSpinsInfoConstants.PurchasedFreeSpinsGroupName) &&
+      resp.curResponse.freeSpinsInfo.event !== FreeSpinsInfoConstants.FreeSpinsFinished &&
+      (resp.curResponse.freeSpinsInfo.currentFreeSpinsGroup?.count || 0) > 0
+    );
+  }
+}

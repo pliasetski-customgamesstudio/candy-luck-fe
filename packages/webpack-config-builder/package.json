@@ -1,0 +1,23 @@
+{
+  "name": "@cgs/webpack-config-builder",
+  "version": "1.0.0",
+  "description": "Webpack build scripts for packages and web application",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "workbox-webpack-plugin": "^7.3.0"
+  }
+}

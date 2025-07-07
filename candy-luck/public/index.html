@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Custom Games Slots</title>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div class="top-canvas-node" id="top-canvas-node">
+      <canvas id="drawHere" class="canvas-node" width="2500" height="1200" tabindex="1"></canvas>
+    </div>
+
+    <div id="dialogs"></div>
+    <div id="sessionInfo" class="session-info"></div>
+
+    <script>
+      ('use strict');
+
+      function isIPhone() {
+        return /iPhone/i.test(navigator.userAgent);
+      }
+
+      function getIOSVersion() {
+        return parseInt(navigator.userAgent.split('OS ')[1], 10);
+      }
+
+      function isIPhoneLowerThanIOS15() {
+        return isIPhone() && getIOSVersion() < 15;
+      }
+
+      function showDeviceNotSupported() {
+        const dialogElement = document.getElementById('dialogs');
+        const title = 'Error';
+        const text = 'Sorry, unfortunately your device is not supported.';
+
+        dialogElement.insertAdjacentHTML(
+          'beforeend',
+          `<div id="alert" class="alert-wrapper">
+            <div class="alert-overlay"></div>
+            <div class="alert">
+              <div class="alert-header">${title}</div>
+              <div class="alert-content">${text}</div>
+            </div>
+          </div>`
+        );
+      }
+
+      if (isIPhoneLowerThanIOS15()) {
+        showDeviceNotSupported();
+      }
+    </script>
+    <script src="./scripts/handlebars.min-v4.7.8.js" defer></script>
+    <!-- TODO: remove this script -->
+    <!-- <script src="https://developers.arkadium.com/cdn/sdk/v2/sdk.js"></script>-->
+  </body>
+</html>

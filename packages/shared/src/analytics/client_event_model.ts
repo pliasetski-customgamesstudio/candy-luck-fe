@@ -1,0 +1,37 @@
+export class ClientEventModel {
+  userId: string;
+  funnelId: string;
+  sessionId: string;
+  eventTs: string;
+  gameId: string;
+  platformId: string;
+  networkId: string;
+  socialNetworkUserId: string;
+  deviceId: string;
+  deviceOs: string;
+  deviceType: string;
+  browser: string;
+  screenResolution: string;
+  serverId: string;
+  userLevel: string;
+  userXp: string;
+  userBalance: string;
+  loginNumber: string;
+  eventType: string;
+  eventName: string;
+  eventValue: string;
+  eventInitiator: string;
+  eventInitiatorId: string;
+  featureId: string;
+  subfeature: string;
+  additionalParams: string;
+  firstLogin: string;
+  connectionType: string;
+  clientVersion: string;
+  transactionId: string;
+  cheatUser: string;
+  appsflyerDeviceId: string;
+  uniqueDeviceId: string;
+  funnelSequence: string;
+  userTier: string;
+}

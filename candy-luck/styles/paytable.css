@@ -1,0 +1,406 @@
+.paytable-wrapper {
+  display: flex;
+  z-index: 1;
+}
+
+.paytable-overlay {
+  background: var(--candy-overlay);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.paytable-wrapper,
+.paytable-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.paytable {
+  --paytable-background: #f6e2d4;
+  --paytable-border-radius: 16px;
+  --paytable-border-color: #e492ac;
+  --paytable-color: #a85498;
+
+  background-image: url('/assets/en/low/games/game2/slot/paytable/html/background.png');
+  background-repeat: repeat;
+  background-size: auto;
+
+  border-radius: var(--paytable-border-radius);
+  border: 8px solid transparent;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  color: var(--paytable-color);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 80vh;
+  width: 80vw;
+  max-width: 760px;
+  z-index: 3;
+  position: relative;
+}
+
+.paytable-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  min-height: 64px;
+  background-color: var(--paytable-background);
+  border-top-left-radius: var(--paytable-border-radius);
+  border-top-right-radius: var(--paytable-border-radius);
+  border-bottom: 4px solid var(--paytable-border-color);
+  box-sizing: border-box;
+}
+
+.paytable-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.paytable-actions,
+.paytable-actions.left {
+  position: relative;
+  z-index: 2;
+}
+
+.paytable-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.paytable-icon {
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  transition: transform 0.2s ease;
+}
+
+.paytable-icon.circle {
+  background-color: var(--paytable-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paytable-icon.circle svg {
+  fill: var(--paytable-background);
+  height: 69%;
+  width: 69%;
+}
+
+.paytable-icon:hover {
+  transform: scale(1.2);
+}
+
+.paytable-icon.is-hidden {
+  display: none;
+}
+
+.paytable-icon svg {
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.paytable-icon:not(.circle) svg {
+  stroke: var(--paytable-color);
+}
+
+.paytable-content {
+  background-color: var(--paytable-background);
+  border-bottom-left-radius: var(--paytable-border-radius);
+  border-bottom-right-radius: var(--paytable-border-radius);
+  padding: 32px;
+  overflow: auto;
+}
+
+.paytable-radio:checked + .paytable-tab + .paytable-content {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.paytable-content {
+  scrollbar-color: var(--paytable-border-color) #f0f0f0;
+  scrollbar-width: thin;
+}
+
+.paytable-content::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.paytable-content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+}
+
+.paytable-content::-webkit-scrollbar-thumb {
+  background-color: var(--paytable-border-color);
+  border-radius: 10px;
+}
+
+.paytable-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.paytable-section:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.paytable-item {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  background: #f2d9c6;
+  border: 1px solid #eac9bd;
+  border-radius: 15px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.item-left {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+}
+
+.item-image-wrapper {
+  display: flex;
+  margin-left: -12px;
+  margin-right: 8px;
+  height: 92px;
+  width: 120px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.item-image {
+  height: auto;
+  width: auto;
+  max-height: 80px;
+  max-width: 100%;
+  margin: auto;
+  transition: transform 0.2s ease;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-image-wrapper + .item-content .item-title {
+  color: var(--paytable-color);
+  text-align: left;
+  font-size: 18px;
+}
+
+.item-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--paytable-color);
+}
+
+.item-description-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.item-description-list li {
+  position: relative;
+  padding-left: 1.5em;
+  text-indent: 0;
+}
+
+.item-description-list li::before {
+  content: '🍬';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-right: 8px;
+}
+
+.item-description-list:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.item-payout {
+  font-size: 18px;
+  color: var(--paytable-color);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.item-payout-count {
+  color: var(--candy-pink);
+  margin-right: 4px;
+}
+
+.paylines-block {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-width: 454px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.slot-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  padding: 8px;
+  background: var(--paytable-color);
+  border-radius: 8px;
+}
+
+.slot-cell {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 4px;
+  width: 10px;
+  height: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.slot-payline {
+  background-color: #ffeb3b;
+  box-shadow: 0 0 4px rgba(255, 235, 59, 0.5);
+}
+
+@media (max-width: 980px) {
+  .paytable {
+    padding: 16px;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    border-width: 0;
+    border-radius: 0;
+  }
+
+  .paytable-icon {
+    height: 28px;
+    width: 28px;
+  }
+
+  .item-left {
+    margin-right: 16px;
+  }
+
+  .item-title,
+  .item-description,
+  .item-payout {
+    font-size: 18px;
+  }
+
+  .item-image-wrapper {
+    margin-right: 0;
+    height: 134px;
+    width: 134px;
+  }
+
+  .paylines-block {
+    max-width: 390px;
+  }
+
+  .slot-cell {
+    height: 14px;
+    width: 14px;
+  }
+}
+
+@media (max-width: 570px) {
+  .paytable {
+    padding: 4px;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-width: 0;
+    border-radius: 0;
+  }
+
+  .paytable-header {
+    padding: 0 8px;
+    min-height: 44px;
+  }
+
+  .paytable-title {
+    font-size: 20px;
+  }
+
+  .paytable-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .paytable-content {
+    padding: 8px;
+  }
+
+  .item-title {
+    font-size: 14px;
+  }
+
+  .item-description,
+  .item-payout {
+    font-size: 12px;
+  }
+
+  .item-description-list li {
+    padding-left: 1.2em;
+  }
+}
+
+/* Font for paytable titles */
+.paytable-title,
+.paytable-header,
+.item-title {
+  font-family:  serif;
+}
+
+/* Font for paytable body text */
+.paytable,
+.paytable-content,
+.item-description,
+.item-payout,
+.item-description-list,
+.item-description-list li {
+  font-family: serif;
+}

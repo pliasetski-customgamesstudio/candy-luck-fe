@@ -1,0 +1,18 @@
+.session-info {
+  position: absolute;
+  color: #cccccc;
+  right: 4px;
+  bottom: 4px;
+  font-size: 14px;
+}
+
+.session-info.is-mobile {
+  right: 2px;
+  bottom: 2px;
+  font-size: 10px;
+}
+
+.session-info.is-mobile.is-portrait {
+  top: 2px;
+  bottom: initial;
+}

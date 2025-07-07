@@ -1,0 +1,24 @@
+@import './alert.css';
+@import './canvas.css';
+
+:root {
+  --candy-pink: #ff69b4;
+  --candy-purple: #9b4dca;
+  --candy-border: #ff9ecd;
+  --candy-overlay: rgba(255, 192, 203, 0.4);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  background-color: #000000;
+
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

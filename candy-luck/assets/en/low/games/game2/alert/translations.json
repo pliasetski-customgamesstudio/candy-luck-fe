@@ -1,0 +1,6 @@
+{
+  "error": "ERROR",
+  "connectionError": "Connection error",
+  "somethingWentWrong": "Something went wrong, please try again later",
+  "close": "Close"
+}

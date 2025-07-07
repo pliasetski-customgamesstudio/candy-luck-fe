@@ -1,0 +1,41 @@
+export class ComponentNames {
+  static Position: string = 'Position';
+  static PositionInterpolate: string = 'PositionInterpolate';
+  static Speed: string = 'Speed';
+  static DrawableIndex: string = 'DarawableIndex';
+  static ReelIndex: string = 'ReelIndex';
+  static LineIndex: string = 'LineIndex';
+  static EnumerationIndex: string = 'EnumerationIndex';
+  static Visible: string = 'Visible';
+  static RelocatedFlag: string = 'RelocatedFlag';
+  static AccelerationInterpolate: string = 'AccelerationInterpolate';
+  static BrakingInterpolate: string = 'BrakingInterpolate';
+  static AfterBraking: string = 'AfterBraking';
+  static FinalPosition: string = 'FinalPosition';
+  static FinalEnumerationIndex: string = 'FinalEnumerationIndex';
+  static PositionInReel: string = 'PositionInReel';
+  static CalculationReadyFlag: string = 'CalculationReadyFlag';
+  static BrakingCalculationInfo: string = 'BrakingCalculationInfo';
+  static ProcessAnimation: string = 'ProcessAnimation';
+  static DrawAnimation: string = 'DrawAnimation';
+  static KeepLastAnimationFrame: string = 'KeepLastAnimationFrame';
+  static MaxSpeed: string = 'MaxSpeed';
+  static BouncingPosition: string = 'BouncingPosition';
+  static ShowStaticAnimation: string = 'ShowStaticAnimation';
+  static StickyIcon: string = 'StickyIcon';
+  static FreeFallingIcon: string = 'FreeFallingIcon';
+  static ToRemoveIndex: string = 'ToRemoveIndex';
+  static CheckIconIndex: string = 'CheckIcon';
+  static SubstituteIcon: string = 'SubstituteIcon';
+  static ShiftMarker: string = 'ShiftIcon';
+  static DisableBlureIconIndex: string = 'DisableBlureIconIndex';
+  static SingleSpinningIndex: string = 'SingleSpinningIndex';
+  static TopLayerIcon: string = 'TopLayerIcon';
+  static IconNode: string = 'IconNode';
+  static LoadSingleScene: string = 'LoadSingleScene';
+  static IconValue: string = 'IconValue';
+  static NeedUpdate: string = 'NeedUpdate';
+  static RemoveEntity: string = 'RemoveEntity';
+
+  static Count: number = 40; //TODO: Increment count, if you will add new component!
+}

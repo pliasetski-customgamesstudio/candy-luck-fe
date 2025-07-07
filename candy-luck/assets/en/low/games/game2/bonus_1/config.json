@@ -1,0 +1,177 @@
+{
+  "Rounds": [
+    {
+      "MobileWebScene": "bonus_1/round_0/scene",
+      "Name": "BonusPick",
+      "Execute": [
+        {
+          "ExecuteData": [
+            { "State": "bonus_1_0", "ElementId": "bonusBG" },
+            { "State": "play", "ElementId": "BonusBgSound" }
+          ],
+          "MessageType": "Init"
+        },
+        {
+          "ExecuteData": [
+            {
+              "Property": "Text",
+              "Value": "{selectedValues}",
+              "ElementId": "item_{selectedIndexes}.freeSpins_add_text"
+            },
+            {
+              "State": "hide_{selectedValues}",
+              "ElementId": "item_{selectedIndexes}.add_{selectedTypes}"
+            },
+            { "State": "{selectedTypes}", "ElementId": "item_{selectedIndexes}" },
+            { "State": "bonus_1_0", "ElementId": "bonusBG" }
+          ],
+          "MessageType": "Restore"
+        },
+        {
+          "ExecuteData": [
+            {
+              "Property": "Text",
+              "Value": "{selectedValues}",
+              "ElementId": "item_{selectedIndexes}.freeSpins_add_text"
+            },
+            {
+              "State": "hide_{selectedValues}",
+              "ElementId": "item_{selectedIndexes}.add_{selectedTypes}"
+            },
+            { "State": "{selectedTypes}", "ElementId": "item_{selectedIndexes}" },
+            { "State": "item_{selectedIndexes}", "ElementId": "flyPart" },
+            { "Duration": 1000 },
+            { "Property": "Text", "Value": "{bonusWin}", "ElementId": "freeSpins_text" }
+          ],
+          "MessageType": "Win"
+        },
+        {
+          "ExecuteData": [{ "State": "anim", "ElementId": "freeSpinsAnim" }],
+          "Condition": { "Operation": "Inequality", "Property": "{bonusWin}", "Value": "0" },
+          "MessageType": "AfterWin"
+        },
+        {
+          "ExecuteData": [
+            { "Duration": 500 },
+            {
+              "Property": "Text",
+              "Value": "{notSelectedValues}",
+              "ElementId": "item_{notSelectedIndexes}.freeSpins_add_text"
+            },
+            {
+              "State": "hide_{notSelectedValues}",
+              "ElementId": "item_{notSelectedIndexes}.add_{notSelectedTypes}"
+            },
+            { "State": "{notSelectedTypes}_dim", "ElementId": "item_{notSelectedIndexes}" },
+            { "Duration": 1000 },
+            { "State": "close", "ElementId": "popup" }
+          ],
+          "MessageType": "Finish"
+        }
+      ],
+      "ServerIndex": 0,
+      "MobileZip": "round_0.zip",
+      "Components": [
+        {
+          "SelectAction": "SendIndex",
+          "Type": "ButtonSet",
+          "Name": "items",
+          "Template": { "Count": 10, "Format": "item_{0}" }
+        }
+      ],
+      "WebScene": "bonus_1/round_0/scene",
+      "Type": "Scene",
+      "MobileScene": "scene.scene"
+    },
+    {
+      "MobileWebScene": "bonus_1/round_1/scene",
+      "Name": "ExtraPick",
+      "Execute": [
+        {
+          "ExecuteData": [
+            { "State": "open", "ElementId": "popup" },
+            { "Property": "Text", "Value": "{bonusWin}", "ElementId": "freeSpins_text" }
+          ],
+          "MessageType": "Init"
+        },
+        {
+          "ExecuteData": [
+            { "State": "bonus_1_0", "ElementId": "bonusBG" },
+            { "Property": "Text", "Value": "{bonusWin}", "ElementId": "freeSpins_text" },
+            {
+              "Property": "Text",
+              "Value": "{selectedValues}",
+              "ElementId": "item_{selectedIndexes}.multiplier_add_text"
+            },
+            { "State": "pick_{selectedTypes}", "ElementId": "item_{selectedIndexes}" },
+            { "State": "play", "ElementId": "BonusBgSound" }
+          ],
+          "MessageType": "Restore"
+        },
+        {
+          "ExecuteData": [
+            {
+              "Property": "Text",
+              "Value": "{selectedValues}",
+              "ElementId": "item_{selectedIndexes}.multiplier_add_text"
+            },
+            { "State": "{selectedTypes}", "ElementId": "item_{selectedIndexes}" },
+            { "State": "item_{selectedIndexes}", "ElementId": "flyPart" },
+            { "Duration": 1000 },
+            { "State": "anim", "ElementId": "multiplierAnim" },
+            { "Property": "Text", "Value": "{selectedValues}", "ElementId": "multiplier_text" }
+          ],
+          "MessageType": "Win"
+        },
+        {
+          "ExecuteData": [
+            { "Duration": 500 },
+            {
+              "Property": "Text",
+              "Value": "{notSelectedValues}",
+              "ElementId": "item_{notSelectedIndexes}.multiplier_add_text"
+            },
+            {
+              "State": "hide_{notSelectedValues}",
+              "ElementId": "item_{notSelectedIndexes}.add_{notSelectedTypes}"
+            },
+            { "State": "{notSelectedTypes}_dim", "ElementId": "item_{notSelectedIndexes}" },
+            { "Duration": 2000 },
+            { "Property": "Text", "Value": "{selectedValues}", "ElementId": "multiplierText" },
+            { "Property": "Text", "Value": "{bonusWin}", "ElementId": "freespin_text" },
+            { "State": "popup_FS", "ElementId": "popup" },
+            { "State": "stop", "ElementId": "BonusBgSound" },
+            { "TargetEvent": "endBonus", "ListenerId": "listener", "ElementId": "popup" },
+            { "State": "close_popup_FS", "ElementId": "popup" },
+            { "State": "hide", "ElementId": "bonusBG" },
+            { "Duration": 700 }
+          ],
+          "MessageType": "Finish"
+        }
+      ],
+      "ServerIndex": 1,
+      "MobileZip": "round_1.zip",
+      "Components": [
+        {
+          "SelectAction": "SendIndex",
+          "Type": "ButtonSet",
+          "Name": "items",
+          "Template": { "Count": 10, "Format": "item_{0}" }
+        }
+      ],
+      "WebScene": "bonus_1/round_1/scene",
+      "Type": "Scene",
+      "MobileScene": "scene.scene"
+    },
+    {
+      "MobileWebScene": "bonus_1/win/scene",
+      "Name": "FinishPopup",
+      "Execute": [],
+      "MobileZip": "end_bonus.zip",
+      "Components": [],
+      "WebScene": "bonus_1/win/scene",
+      "Type": "Animation",
+      "MobileScene": "scene.scene"
+    }
+  ]
+}

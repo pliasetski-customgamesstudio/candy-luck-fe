@@ -1,0 +1,40 @@
+{
+  "name": "cgs",
+  "version": "1.0.0",
+  "description": "cgs",
+  "scripts": {
+    "candy-luck:start:aggregator:server1": "cd web && npm run start:aggregator:server1",
+    "candy-luck:build:dev:server1": "cd web && npm run build:dev:server1",
+    "candy-luck:build:qa:server1": "cd web && npm run build:qa:server1",
+    "candy-luck:build:prod:server1": "cd web && npm run build:prod:server1",
+    "candy-luck:start:server2": "cd web && npm run start:server2",
+    "candy-luck:start:aggregator:server2": "cd web && npm run start:aggregator:server2",
+    "candy-luck:build:dev:server2": "cd web && npm run build:dev:server2",
+    "candy-luck:build:qa:server2": "cd web && npm run build:qa:server2",
+    "candy-luck:build:prod:server2": "cd web && npm run build:prod:server2",
+    "web:start:aggregator:server1": "cd web && npm run start:aggregator:server1",
+    "web:build:dev:server1": "cd web && npm run build:dev:server1",
+    "web:build:qa:server1": "cd web && npm run build:qa:server1",
+    "web:build:prod:server1": "cd web && npm run build:prod:server1",
+    "web:start:server2": "cd web && npm run start:server2",
+    "web:start:aggregator:server2": "cd web && npm run start:aggregator:server2",
+    "web:build:dev:server2": "cd web && npm run build:dev:server2",
+    "web:build:qa:server2": "cd web && npm run build:qa:server2",
+    "web:build:prod:server2": "cd web && npm run build:prod:server2",
+    "lint": "eslint .",
+    "prettier": "prettier --config ./.prettierrc.json --write \"**/*.{ts,css,json,html}\""
+  },
+  "workspaces": [
+    "candy-luck",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "fs-extra": "^11.2.0",
+    "prettier": "^3.1.1"
+  }
+}

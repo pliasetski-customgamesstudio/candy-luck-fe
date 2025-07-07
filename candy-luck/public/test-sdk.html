@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    TEST SDK
+
+    <script src="https://developers.arkadium.com/cdn/sdk/v2/sdk.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const sdk = await window.ArkadiumGameSDK.getInstance();
+
+        sdk.lifecycle.onTestReady().then(() => {
+          sdk.auth.onOpenAuthForm((isOpened) => {
+            debugger;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

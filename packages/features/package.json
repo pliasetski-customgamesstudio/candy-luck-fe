@@ -1,0 +1,28 @@
+{
+  "name": "@cgs/features",
+  "version": "1.0.0",
+  "description": "Library contains features logic",
+  "main": "src/index.ts",
+  "scripts": {
+    "build:dev": "webpack",
+    "build:dev:watch": "webpack --watch",
+    "build:prod": "webpack --env mode=production"
+  },
+  "dependencies": {
+    "@cgs/common": "*",
+    "@cgs/network": "*",
+    "@cgs/shared": "*",
+    "@cgs/syd": "*",
+    "@cgs/webpack-config-builder": "*"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

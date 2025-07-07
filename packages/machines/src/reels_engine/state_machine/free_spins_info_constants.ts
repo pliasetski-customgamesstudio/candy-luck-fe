@@ -1,0 +1,15 @@
+export enum FreeSpinsInfoConstants {
+  FreeFreeSpinsGroupName = 'free',
+  PurchasedFreeSpinsGroupName = 'purchased',
+  FreeRespinSpinsGroupName = 'freeRespin',
+  FreeFrozenSpinsGroupName = 'freeFrozen',
+  FreeBaseGiftSpinsGroupName = 'baseGiftSpin',
+  FreeFreeGiftSpinsGroupName = 'freeGiftSpin',
+  FreeFreeGiftSpinsRestore = 'restore',
+  FreeSpinsStarted = 'started',
+  FreeSpinsFinished = 'finished',
+  FreeGiftSpinsStarted = 'freeGiftStarted',
+  FreeSpinsGroupSwitched = 'groupSwitched',
+  FreeSpinsAdded = 'added',
+  FreeSpinsCollapsingAdded = 'collapsingAdded',
+}
