@@ -7,7 +7,6 @@ import { IHudCoordinator } from '../i_hud_coordinator';
 
 export class PaytableButtonController extends BaseSlotController<PaytableButtonView> {
   private _paytablePopupComponent: PaytablePopupComponent;
-  // private _paytablePopupHTMLComponent: PaytablePopupHTMLComponent;
 
   constructor(container: Container, buttonView: PaytableButtonView) {
     super(container, buttonView);
@@ -27,22 +26,8 @@ export class PaytableButtonController extends BaseSlotController<PaytableButtonV
     return this._paytablePopupComponent;
   }
 
-  // get paytablePopupHTMLComponent(): PaytablePopupHTMLComponent {
-  //   if (!this._paytablePopupHTMLComponent) {
-  //     this._paytablePopupHTMLComponent = this.container.forceResolve<PaytablePopupHTMLComponent>(
-  //       T_PaytablePopupHTMLComponent
-  //     );
-  //   }
-  //
-  //   return this._paytablePopupHTMLComponent;
-  // }
-
   buttonClicked(): void {
-    //if (EnvironmentConfig.useHTMLPayTable) {
-    //  this.paytablePopupHTMLComponent.show();
-    //} else {
     this.paytablePopupComponent.view.show();
-    //}
   }
 
   enableButton(): void {

@@ -122,15 +122,12 @@ export class CandyLuckLoginFormComponent {
       return new EmptyAction();
     }
 
-    const promise = new Promise((resolve) => {
-      const unsubscribePromise = this._arkadiumSdk.onOpenAuthForm((isOpened: boolean) => {
+    const promise = new Promise<void>((resolve) => {
+      const subscription = this._arkadiumSdk.authFormOpenStream.listen((isOpened: boolean) => {
         if (!isOpened) {
-          unsubscribePromise.then((callback) => callback());
-
+          subscription.cancel();
           this.updateShowTime();
-
-          // TODO: remove set timeout
-          setTimeout(resolve, 2000);
+          resolve();
         }
       });
     });

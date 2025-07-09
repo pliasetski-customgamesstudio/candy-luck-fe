@@ -1,6 +1,6 @@
 import { getInstance } from '@arkadiuminc/sdk';
 import { Logger } from '../utils/logger';
-import { Completer } from '@cgs/syd';
+import { Completer, EventDispatcher, EventStream } from '@cgs/syd';
 import { EnvironmentConfig } from '../config/environment_config';
 
 interface Image {
@@ -73,8 +73,7 @@ export class ArkadiumSdk {
   }
 
   private _sdk: Completer<ArkadiumGameSdk | null> = new Completer();
-  private _authStatusChangeSub: (() => void) | null = null;
-  private _openAuthFormSub: (() => void) | null = null;
+  private _authFormOpenEventDispatcher: EventDispatcher<boolean> = new EventDispatcher();
 
   constructor() {
     this.initialize();
@@ -95,13 +94,10 @@ export class ArkadiumSdk {
     } catch {
       this._sdk.complete(null);
     }
-  }
 
-  public destroy(): void {
-    this._authStatusChangeSub?.();
-    this._authStatusChangeSub = null;
-    this._openAuthFormSub?.();
-    this._openAuthFormSub = null;
+    this.onOpenAuthForm((isOpened) => {
+      this._authFormOpenEventDispatcher.dispatchEvent(isOpened);
+    });
   }
 
   public async isInited(): Promise<boolean> {
@@ -149,14 +145,12 @@ export class ArkadiumSdk {
 
   public async onAuthStatusChange(callback: (isAuthorized: boolean) => void): Promise<() => void> {
     const sdk = await this._sdk.promise;
-    this._authStatusChangeSub = sdk?.auth.onAuthStatusChange(callback) || (() => {});
-    return this._authStatusChangeSub;
+    return sdk?.auth.onAuthStatusChange(callback) || (() => {});
   }
 
   public async onOpenAuthForm(callback: (isOpened: boolean) => void): Promise<() => void> {
     const sdk = await this._sdk.promise;
-    this._openAuthFormSub = sdk?.auth.onOpenAuthForm(callback) || (() => {});
-    return this._openAuthFormSub;
+    return sdk?.auth.onOpenAuthForm(callback) || (() => {});
   }
 
   public async getUserProfile(): Promise<UserProfile | null> {
@@ -198,5 +192,9 @@ export class ArkadiumSdk {
   public async openAuthForm(): Promise<void> {
     const sdk = await this._sdk.promise;
     return sdk ? sdk.auth.openAuthForm() : Promise.resolve();
+  }
+
+  public get authFormOpenStream(): EventStream<boolean> {
+    return this._authFormOpenEventDispatcher.eventStream;
   }
 }
